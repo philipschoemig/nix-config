@@ -44,7 +44,6 @@
         "lenovo-yoga" = lib.nixosSystem {
           modules = [
             ./hosts/lenovo-yoga
-            inputs.home-manager.nixosModules.home-manager
           ];
           specialArgs = { inherit inputs outputs; };
         };
