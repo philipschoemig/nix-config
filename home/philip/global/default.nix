@@ -2,7 +2,12 @@
 
 {
   imports = [
+    ./firefox.nix
     ./git.nix
+    ./keepassxc.nix
+    ./neovim.nix
+    ./zathura.nix
+    ./bash
     ./vscode
   ];
 
