@@ -9,6 +9,6 @@
       init.defaultBranch = "main";
     };
     lfs.enable = true;
-    ignores = [ ".direnv" "result" ];
+    ignores = [ ".direnv" "result*" ];
   };
 }
