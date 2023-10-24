@@ -1,18 +1,21 @@
-{ config, pkgs, ... }:
+{ inputs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
+  imports = [
+    inputs.hardware.nixosModules.common-cpu-intel
+    inputs.hardware.nixosModules.common-pc-laptop
+    inputs.hardware.nixosModules.common-pc-laptop-ssd
 
-      ../common/global
-      ../common/users/philip
+    ./hardware-configuration.nix
 
-      ../common/optional/office.nix
-      ../common/optional/pipewire.nix
-      ../common/optional/systemd-boot.nix
-      ../common/optional/xserver.nix
-    ];
+    ../common/global
+    ../common/users/philip
+
+    ../common/optional/office.nix
+    ../common/optional/pipewire.nix
+    ../common/optional/systemd-boot.nix
+    ../common/optional/xserver.nix
+  ];
 
   networking.hostName = "lenovo-yoga";
 
