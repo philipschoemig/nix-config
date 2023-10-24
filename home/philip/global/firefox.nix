@@ -7,13 +7,18 @@
     profiles."default" = {
       isDefault = true;
 
+      extensions = with pkgs.inputs.firefox-addons; [
+        ghostery
+        keepassxc-browser
+      ];
+
       search.default = "SearXNG";
       search.force = true;
 
       search.engines = {
         "SearXNG" = {
-          urls = [{ template = "https://searx.be/search?q={searchTerms}"; }];
-          iconUpdateURL = "https://searx.be/static/themes/oscar/img/favicon.png";
+          urls = [{ template = "https://search.demoniak.ch/search?q={searchTerms}"; }];
+          iconUpdateURL = "https://search.demoniak.ch/static/themes/simple/img/favicon.png";
           definedAliases = [ "@searx" ];
         };
 
