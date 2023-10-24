@@ -11,6 +11,7 @@
     ../common/global
     ../common/users/philip
 
+    ../common/optional/laptop-battery.nix
     ../common/optional/office.nix
     ../common/optional/pipewire.nix
     ../common/optional/systemd-boot.nix
@@ -22,8 +23,6 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   networking.networkmanager.enable = true;
-
-  powerManagement.powertop.enable = true;
 
   programs = {
     light.enable = true;
@@ -38,6 +37,8 @@
 
   services.printing.enable = true;
 
+  services.thermald.enable = true;
+
   xdg.portal = {
     enable = true;
     wlr.enable = true;
@@ -50,5 +51,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }
