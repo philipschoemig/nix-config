@@ -36,6 +36,8 @@
     {
       inherit lib;
 
+      overlays = import ./overlays { inherit inputs outputs; };
+
       devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
       formatter = forEachSystem (pkgs: pkgs.nixpkgs-fmt);
 
