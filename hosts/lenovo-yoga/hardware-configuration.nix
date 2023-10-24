@@ -8,22 +8,29 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    initrd = {
+      availableKernelModules = [ "xhci_pci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      kernelModules = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4c5a389c-7bbc-4690-96a4-9ce722840d68";
+      luks.devices."luks-35a0bfe2-887c-48ef-8755-60f55f495314".device = "/dev/disk/by-uuid/35a0bfe2-887c-48ef-8755-60f55f495314";
+    };
+
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
+  };
+
+  fileSystems = {
+    "/" = {
+      device = "/dev/disk/by-uuid/4c5a389c-7bbc-4690-96a4-9ce722840d68";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-35a0bfe2-887c-48ef-8755-60f55f495314".device = "/dev/disk/by-uuid/35a0bfe2-887c-48ef-8755-60f55f495314";
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5C19-EA15";
+    "/boot" = {
+      device = "/dev/disk/by-uuid/5C19-EA15";
       fsType = "vfat";
     };
+  };
 
   swapDevices = [ ];
 
@@ -35,6 +42,6 @@
   # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }
