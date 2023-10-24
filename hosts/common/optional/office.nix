@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   # Workaround for onlyoffice to locate font files according to https://nixos.wiki/wiki/Onlyoffice
