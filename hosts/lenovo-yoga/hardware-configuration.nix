@@ -17,6 +17,13 @@
     };
 
     kernelModules = [ "kvm-intel" ];
+
+    kernelParams = [
+      # Enable complete Processor MMIO Stale Data mitigation by disabling SMT, see
+      # https://www.kernel.org/doc/html/latest/admin-guide/hw-vuln/processor_mmio_stale_data.html
+      "mmio_stale_data=full,nosmt"
+    ];
+
     extraModulePackages = [ ];
   };
 
