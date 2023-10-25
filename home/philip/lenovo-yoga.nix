@@ -2,5 +2,6 @@
 {
   imports = [
     ./global
+    ./features/desktop/xfce
   ];
 }
