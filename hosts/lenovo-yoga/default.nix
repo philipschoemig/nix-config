@@ -37,6 +37,8 @@
     lidSwitchExternalPower = "lock";
   };
 
+  services.fwupd.enable = true;
+
   services.printing.enable = true;
 
   services.thermald.enable = true;
