@@ -18,6 +18,8 @@
     ../common/optional/xserver.nix
   ];
 
+  hardware.bluetooth.enable = true;
+
   networking.hostName = "lenovo-yoga";
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

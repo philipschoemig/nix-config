@@ -79,8 +79,6 @@
   # Enable firmware update service.
   services.fwupd.enable = true;
 
-  services.blueman.enable = true;
-
   services.logind.lidSwitch = "suspend";
   services.power-profiles-daemon.enable = false;
   services.thermald.enable = true;

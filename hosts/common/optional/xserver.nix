@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   services = {
@@ -20,6 +20,8 @@
       layout = "de";
     };
   };
+
+  services.blueman.enable = config.hardware.bluetooth.enable;
 
   programs.thunar = {
     enable = true;
