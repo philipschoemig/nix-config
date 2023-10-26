@@ -11,9 +11,11 @@
         xterm.enable = false;
       };
 
-      displayManager.defaultSession = "xfce";
-      # displayManager.gdm.enable = true;
-      displayManager.lightdm.enable = true;
+      displayManager = {
+        defaultSession = "xfce";
+        # gdm.enable = true;
+        lightdm.enable = true;
+      };
 
       layout = "de";
     };
