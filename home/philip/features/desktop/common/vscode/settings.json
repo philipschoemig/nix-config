@@ -1,7 +1,9 @@
 {
-    "workbench.colorTheme": "Default Light Modern",
-    "git.confirmSync": false,
+    "editor.fontFamily": "'FiraCode Nerd Font Mono Regular'",
+    "editor.fontLigatures": true,
     "git.autofetch": true,
+    "git.confirmSync": false,
     "git.inputValidationLength": 100,
-    "git.inputValidationSubjectLength": 100
+    "git.inputValidationSubjectLength": 100,
+    "workbench.colorTheme": "Default Light Modern"
 }
