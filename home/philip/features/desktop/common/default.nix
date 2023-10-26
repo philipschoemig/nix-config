@@ -17,6 +17,8 @@
     xarchiver # Archiver front end
   ];
 
+  services.safeeyes.enable = true;
+
   xdg.enable = true;
   xdg.mimeApps = {
     enable = true;
