@@ -11,8 +11,9 @@
   ];
 
   home.packages = with pkgs; [
-    pavucontrol
-    pulseaudio # pacmd and pactl
+    pavucontrol # Volume control
+    pulseaudio # Sound server
+    qimgv # Image viewer
   ];
 
   xdg.enable = true;
