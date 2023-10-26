@@ -1,14 +1,18 @@
-{ pkgs, lib, config, ... }:
+{ lib, ... }:
 
 {
   programs.git = {
     enable = true;
-    userName = "Philip Schömig";
-    userEmail = "philip.schoemig@posteo.de";
-    extraConfig = {
-      init.defaultBranch = "main";
-    };
+
     lfs.enable = true;
-    ignores = [ ".direnv" "result*" ];
+
+    userName = "Philip Schömig";
+    userEmail = lib.mkDefault "philip.schoemig@posteo.de";
+
+    extraConfig = {
+      core.quotepath = "off";
+      init.defaultBranch = "main";
+      pull.ff = "only";
+    };
   };
 }

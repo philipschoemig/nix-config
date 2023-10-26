@@ -49,11 +49,23 @@
           ];
           specialArgs = { inherit inputs outputs; };
         };
+        # Work laptop
+        "secunet-thinkpad" = lib.nixosSystem {
+          modules = [
+            ./hosts/secunet-thinkpad
+          ];
+          specialArgs = { inherit inputs outputs; };
+        };
       };
 
       homeConfigurations = {
         "philip@lenovo-yoga" = lib.homeManagerConfiguration {
           modules = [ ./home/philip/lenovo-yoga.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "philip@secunet-thinkpad" = lib.homeManagerConfiguration {
+          modules = [ ./home/philip/secunet-thinkpad.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
