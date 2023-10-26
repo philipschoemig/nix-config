@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   services = {
     xserver = {
@@ -16,4 +18,9 @@
       layout = "de";
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    xfce.thunar-archive-plugin
+    xfce.xfce4-pulseaudio-plugin
+  ];
 }
