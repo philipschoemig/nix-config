@@ -17,9 +17,15 @@
 
       search.engines = {
         "SearXNG" = {
+          urls = [{ template = "https://search.sapti.me/search?q={searchTerms}"; }];
+          iconUpdateURL = "https://search.sapti.me/static/themes/simple/img/favicon.png";
+          definedAliases = [ "@searx" ];
+        };
+
+        "SearXNG Alternative" = {
           urls = [{ template = "https://search.demoniak.ch/search?q={searchTerms}"; }];
           iconUpdateURL = "https://search.demoniak.ch/static/themes/simple/img/favicon.png";
-          definedAliases = [ "@searx" ];
+          definedAliases = [ "@searx-alt" ];
         };
 
         "Startpage" = {
