@@ -10,6 +10,15 @@
   ];
 
   home.packages = with pkgs; [
-    timewarrior
+    ### Nix tools ###
+    alejandra # Nix formatter
+    nil # Nix language server
+    statix # Nix linter
+
+    ltex-ls # Spell checking language server
+
+    shfmt # Shell parser and formatter 
+
+    timewarrior # Time tracker
   ];
 }

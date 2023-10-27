@@ -16,7 +16,9 @@
       bungcip.better-toml
       davidanson.vscode-markdownlint
       eamodio.gitlens
+      esbenp.prettier-vscode
       foxundermoon.shell-format
+      gruntfuggly.todo-tree
       jebbs.plantuml
       jnoortheen.nix-ide
       matklad.rust-analyzer
@@ -28,14 +30,16 @@
       njpwerner.autodocstring
       redhat.vscode-yaml
       streetsidesoftware.code-spell-checker
+      timonwong.shellcheck
       vadimcn.vscode-lldb
+      valentjn.vscode-ltex
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       # VS Code extensions that are not part of pkgs.vscode-extensions.
       {
         name = "code-spell-checker-german";
         publisher = "streetsidesoftware";
-        version = "2.2.1";
-        sha256 = "F0ykTfFAZSqWfntYKWWEgtUyLimBT0Q0fiE219/YqGs=";    
+        version = "2.2.2";
+        sha256 = "jW2bf1Njp1n67khT1+L2pxFBB+F2bTaAuofz2AqDPO4=";
       }
       {
         name = "commitlint";
