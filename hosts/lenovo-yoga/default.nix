@@ -1,6 +1,4 @@
-{ inputs, ... }:
-
-{
+{inputs, ...}: {
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
     inputs.hardware.nixosModules.common-pc-laptop
@@ -42,6 +40,10 @@
   services.printing.enable = true;
 
   services.thermald.enable = true;
+
+  # Enable battery conservation mode
+  services.tlp.settings.START_CHARGE_THRESH_BAT0 = 0; # dummy value
+  services.tlp.settings.STOP_CHARGE_THRESH_BAT0 = 1; # batteries charges to 60%
 
   xdg.portal = {
     enable = true;

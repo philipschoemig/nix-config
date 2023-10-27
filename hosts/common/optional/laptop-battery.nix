@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   services.power-profiles-daemon.enable = false;
 
   services.tlp = {
@@ -15,8 +15,8 @@
       # preserve lifetime. Run `tlp fullcharge` to temporarily force
       # full charge.
       # https://linrunner.de/tlp/faq/battery.html#how-to-choose-good-battery-charge-thresholds
-      START_CHARGE_THRESH_BAT0 = 30;
-      STOP_CHARGE_THRESH_BAT0 = 60;
+      START_CHARGE_THRESH_BAT0 = lib.mkDefault 30;
+      STOP_CHARGE_THRESH_BAT0 = lib.mkDefault 60;
     };
   };
 }
