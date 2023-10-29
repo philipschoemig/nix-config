@@ -28,6 +28,7 @@
   # Enable GNOME Keyring daemon and automatically unlock the keyring upon login
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.lightdm.enableGnomeKeyring = true;
+  programs.seahorse.enable = true;
 
   programs.thunar = {
     enable = true;
