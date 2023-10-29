@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./vscode
     ./chromium.nix
@@ -24,10 +22,11 @@
     enable = true;
 
     defaultApplications = {
-      "application/zip" = [ "xarchiver.desktop" ];
-      "image/*" = [ "qimgv.desktop" ];
-      "image/png" = [ "qimgv.desktop" ];
-      "image/jpeg" = [ "qimgv.desktop" ];
+      "application/x-archive" = ["xarchiver.desktop"];
+      "application/zip" = ["xarchiver.desktop"];
+      "image/*" = ["qimgv.desktop"];
+      "image/png" = ["qimgv.desktop"];
+      "image/jpeg" = ["qimgv.desktop"];
     };
   };
 }
