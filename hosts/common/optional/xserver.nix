@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services = {
     xserver = {
       enable = true;
@@ -22,6 +24,10 @@
   };
 
   services.blueman.enable = config.hardware.bluetooth.enable;
+
+  # Enable GNOME Keyring daemon and automatically unlock the keyring upon login
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.lightdm.enableGnomeKeyring = true;
 
   programs.thunar = {
     enable = true;
