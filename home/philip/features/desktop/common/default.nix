@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     pavucontrol # Volume control
     pulseaudio # Sound server
+    qalculate-gtk # Calculator
     qimgv # Image viewer
     xarchiver # Archiver front end
   ];

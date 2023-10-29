@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   imports = [
     ./bash.nix
     ./direnv.nix
@@ -15,9 +13,11 @@
     nil # Nix language server
     statix # Nix linter
 
+    libqalculate # Calculator (CLI of qalculate)
+
     ltex-ls # Spell checking language server
 
-    shfmt # Shell parser and formatter 
+    shfmt # Shell parser and formatter
 
     timewarrior # Time tracker
   ];
