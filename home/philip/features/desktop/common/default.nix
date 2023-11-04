@@ -5,6 +5,7 @@
     ./firefox.nix
     ./keepassxc.nix
     ./ssh-agent.nix
+    ./thunderbird.nix
     ./zathura.nix
   ];
 
