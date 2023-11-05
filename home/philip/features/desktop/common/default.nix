@@ -14,6 +14,7 @@
     pulseaudio # Sound server
     qalculate-gtk # Calculator
     qimgv # Image viewer
+    qownnotes # Notes manager
     xarchiver # Archiver front end
   ];
 
@@ -27,8 +28,8 @@
       "application/x-archive" = ["xarchiver.desktop"];
       "application/zip" = ["xarchiver.desktop"];
       "image/*" = ["qimgv.desktop"];
-      "image/png" = ["qimgv.desktop"];
       "image/jpeg" = ["qimgv.desktop"];
+      "image/png" = ["qimgv.desktop"];
     };
   };
 }
