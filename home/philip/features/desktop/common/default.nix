@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./vscode
+    ./activitywatch.nix
     ./chromium.nix
     ./firefox.nix
     ./keepassxc.nix
