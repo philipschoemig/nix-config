@@ -1,12 +1,13 @@
-{ pkgs, ... }:
-
-{
-  home.packages = with pkgs; [
-    keepassxc
+{pkgs, ...}: let
+  package = pkgs.keepassxc;
+  application = "org.keepassxc.KeePassXC";
+in {
+  home.packages = [
+    package
   ];
 
-  home.file.keepassxc = {
-    target = ".config/autostart/" + "org.keepassxc.KeePassXC" + ".desktop";
-    source = (pkgs.keepassxc + "/share/applications/" + "org.keepassxc.KeePassXC" + ".desktop");
+  xdg.configFile."${application}" = {
+    source = "${package}/share/applications/${application}.desktop";
+    target = "autostart/${application}.desktop";
   };
 }
