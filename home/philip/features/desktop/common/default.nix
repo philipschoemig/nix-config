@@ -11,6 +11,7 @@
   ];
 
   home.packages = with pkgs; [
+    element-desktop # Element/Matrix client
     pavucontrol # Volume control
     pulseaudio # Sound server
     qalculate-gtk # Calculator
