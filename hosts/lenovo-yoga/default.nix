@@ -11,6 +11,7 @@
 
     ../common/optional/laptop-battery.nix
     ../common/optional/office.nix
+    ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
     ../common/optional/smartcard.nix
     ../common/optional/systemd-boot.nix
