@@ -1,27 +1,70 @@
 {
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "editor.codeActionsOnSave": ["source.organizeImports"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.fontFamily": "'FiraCode Nerd Font Mono Regular'",
   "editor.fontLigatures": true,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.inputValidationLength": 100,
   "git.inputValidationSubjectLength": 100,
+  "git.openRepositoryInParentFolders": "never",
   "nix.enableLanguageServer": true,
   "nix.formatterPath": "alejandra",
   "nix.serverPath": "nil",
   "nix.serverSettings": {
     "nil": {
       "formatting": {
-        "command": [
-          "alejandra"
-        ]
+        "command": ["alejandra"]
       }
     }
   },
+  "prettier.proseWrap": "always",
+  "redhat.telemetry.enabled": false,
+  "workbench.startupEditor": "none",
   "workbench.colorTheme": "Default Light Modern"
 }
