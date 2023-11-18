@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  hardware.sane.enable = true;
+  hardware.sane = {
+    enable = true;
+    extraBackends = [pkgs.sane-airscan];
+  };
 
   # Enable autodiscovery of network printers, see https://nixos.wiki/wiki/Printing#Enable_autodiscovery_of_network_printers
   services.avahi = {
