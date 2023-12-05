@@ -1,10 +1,9 @@
-{ inputs, lib, ... }:
-{
+{lib, ...}: {
   nix = {
     settings = {
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = ["root" "@wheel"];
       auto-optimise-store = lib.mkDefault true;
-      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+      experimental-features = ["nix-command" "flakes" "repl-flake"];
     };
 
     extraOptions = ''
@@ -12,11 +11,11 @@
       keep-derivations = true
     '';
 
-    # gc = {
-    #   automatic = true;
-    #   dates = "weekly";
-    #   # Keep the last 3 generations
-    #   options = "--delete-older-than +3";
-    # };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      # Keep the last 10 generations
+      options = "--delete-older-than +10";
+    };
   };
 }
