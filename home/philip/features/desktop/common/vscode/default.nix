@@ -19,7 +19,6 @@
         gruntfuggly.todo-tree
         jebbs.plantuml
         jnoortheen.nix-ide
-        matklad.rust-analyzer
         mkhl.direnv
         ms-azuretools.vscode-docker
         ms-python.python
