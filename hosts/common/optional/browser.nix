@@ -3,16 +3,17 @@
     enable = true;
 
     defaultSearchProviderEnabled = true;
-    defaultSearchProviderSearchURL = "https://search.demoniak.ch/search?q=%s";
-    defaultSearchProviderSuggestURL = "https://search.demoniak.ch/search?q=%s";
+    defaultSearchProviderSearchURL = "https://www.startpage.com/sp/search?query=%s";
+    defaultSearchProviderSuggestURL = "https://www.startpage.com/sp/search?query=%s";
 
     extraOpts = {
       "PasswordManagerEnabled" = false;
       "SpellcheckEnabled" = true;
       "SpellcheckLanguage" = [
-                               "de"
-                               "en-US"
-                             ];
+        "de"
+        "en-US"
+        "en-GB"
+      ];
     };
   };
 
@@ -22,6 +23,7 @@
     languagePacks = [
       "de"
       "en-US"
+      "en-GB"
     ];
 
     policies = {
