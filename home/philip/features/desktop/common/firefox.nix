@@ -11,10 +11,16 @@
         leechblock-ng
       ];
 
-      search.default = "SearXNG";
+      search.default = "Startpage";
       search.force = true;
 
       search.engines = {
+        "Startpage" = {
+          urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
+          iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-16x16--default.png";
+          definedAliases = ["@startpage"];
+        };
+
         "SearXNG" = {
           urls = [{template = "https://search.sapti.me/search?q={searchTerms}";}];
           iconUpdateURL = "https://search.sapti.me/static/themes/simple/img/favicon.png";
@@ -25,12 +31,6 @@
           urls = [{template = "https://search.demoniak.ch/search?q={searchTerms}";}];
           iconUpdateURL = "https://search.demoniak.ch/static/themes/simple/img/favicon.png";
           definedAliases = ["@searx-alt"];
-        };
-
-        "Startpage" = {
-          urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
-          iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-16x16--default.png";
-          definedAliases = ["@startpage"];
         };
 
         "NixOS Packages" = {
