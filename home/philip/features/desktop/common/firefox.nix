@@ -105,6 +105,22 @@
           definedAliases = ["@dictcc"];
         };
       };
+
+      # See https://kb.mozillazine.org/About:config
+      settings = {
+        "browser.startup.page" = 3; # Resume the previous browser session
+        "privacy.clearOnShutdown.cache" = true;
+        "privacy.clearOnShutdown.cookies" = false;
+        "privacy.clearOnShutdown.downloads" = true;
+        "privacy.clearOnShutdown.formdata" = true;
+        "privacy.clearOnShutdown.history" = false; # Needed to keep tabs open
+        "privacy.clearOnShutdown.offlineApps" = false;
+        "privacy.clearOnShutdown.openWindows" = false;
+        "privacy.clearOnShutdown.sessions" = true;
+        "privacy.clearOnShutdown.siteSettings" = false;
+        "privacy.history.custom" = true;
+        "privacy.sanitize.sanitizeOnShutdown" = true;
+      };
     };
   };
 
