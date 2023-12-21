@@ -2,6 +2,7 @@
   imports = [
     ./vscode
     ./activitywatch.nix
+    ./autorandr.nix
     ./chromium.nix
     ./firefox.nix
     ./keepassxc.nix
