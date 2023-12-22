@@ -4,6 +4,9 @@
     extraBackends = [pkgs.sane-airscan];
   };
 
+  # Required to fix CUPS error messages about ColorManager
+  services.colord.enable = true;
+
   # Enable autodiscovery of network printers, see https://nixos.wiki/wiki/Printing#Enable_autodiscovery_of_network_printers
   services.avahi = {
     enable = true;
