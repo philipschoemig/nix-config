@@ -9,6 +9,7 @@
     ../common/global
     ../common/users/philip
 
+    ../common/optional/bluetooth.nix
     ../common/optional/browser.nix
     ../common/optional/laptop-battery.nix
     ../common/optional/office.nix
@@ -29,8 +30,6 @@
 
   # Necessary for the T14 Gen3 iris graphics, since they're not officially supported yet
   boot.kernelParams = ["i915.force_probe=46a6"];
-
-  hardware.bluetooth.enable = true;
 
   networking.hostName = "secunet-thinkpad"; # Define your hostname.
 

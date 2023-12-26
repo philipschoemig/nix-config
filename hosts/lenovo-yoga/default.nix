@@ -9,6 +9,8 @@
     ../common/global
     ../common/users/philip
 
+    ../common/optional/bluetooth.nix
+    ../common/optional/browser.nix
     ../common/optional/laptop-battery.nix
     ../common/optional/office.nix
     ../common/optional/password-manager.nix
@@ -18,8 +20,6 @@
     ../common/optional/systemd-boot.nix
     ../common/optional/xserver.nix
   ];
-
-  hardware.bluetooth.enable = true;
 
   networking.hostName = "lenovo-yoga";
 
