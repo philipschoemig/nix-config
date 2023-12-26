@@ -3,6 +3,7 @@
     ./vscode
     ./activitywatch.nix
     ./autorandr.nix
+    ./blueman.nix
     ./chromium.nix
     ./firefox.nix
     ./keepassxc.nix
