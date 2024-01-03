@@ -22,7 +22,14 @@
     xarchiver # Archiver front end
   ];
 
-  services.safeeyes.enable = true;
+  services = {
+    gnome-keyring = {
+      enable = true;
+      components = ["pkcs11" "secrets" "ssh"];
+    };
+
+    safeeyes.enable = true;
+  };
 
   xdg.enable = true;
   xdg.mimeApps = {

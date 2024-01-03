@@ -19,9 +19,8 @@
     };
   };
 
-  # Enable GNOME Keyring daemon and automatically unlock the keyring upon login
+  # Enable GNOME Keyring daemon and install seahorse
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services.lightdm.enableGnomeKeyring = true;
   programs.seahorse.enable = true;
 
   programs.thunar = {
