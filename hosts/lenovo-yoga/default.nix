@@ -12,6 +12,7 @@
     ../common/optional/bluetooth.nix
     ../common/optional/browser.nix
     ../common/optional/laptop-battery.nix
+    ../common/optional/nvidia.nix
     ../common/optional/office.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
