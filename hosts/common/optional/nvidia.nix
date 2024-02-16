@@ -9,41 +9,15 @@
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
-  # hardware.nvidia = {
-  #   open = false;
-  #   modesetting.enable = true;
-  #   powerManagement = {
-  #     enable = true;
-  #     finegrained = true;
-  #   };
-  #   nvidiaSettings = false;
-  #   nvidiaPersistenced = true;
-  #   forceFullCompositionPipeline = true;
-  #   package = osConfig.boot.kernelPackages.nvidiaPackages.stable;
-  #   prime = {
-  #     offload.enable = true;
-  #     offload.enableOffloadCmd = true;
-  #     intelBusId = "PCI:0:2:0";
-  #     nvidiaBusId = "PCI:1:0:0";
-  #   };
-  # };
-  # services.xserver = {
-  #   videoDrivers = ["nvidia"];
-  #   # deviceSection = ''
-  #   #   Option "DRI" "2"
-  #   #   Option "TearFree" "true"
-  #   # '';
-  # };
-
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
 
     # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     # Fine-grained power management. Turns off GPU when not in use.
     # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
+    powerManagement.finegrained = true;
 
     # Use the NVidia open source kernel module (not to be confused with the
     # independent third-party "nouveau" open source driver).
@@ -61,7 +35,6 @@
     prime = {
       offload.enable = true;
       offload.enableOffloadCmd = true;
-      # sync.enable = true;
       # Make sure to use the correct Bus ID values for your system!
       intelBusId = "PCI:0:2:0";
       nvidiaBusId = "PCI:43:0:0";
