@@ -26,6 +26,16 @@ in {
 
   xdg.desktopEntries.steam = {
     name = "Steam (Nvidia-Offload)";
-    exec = "nvidia-offload steam";
+    exec = "nvidia-offload steam %U";
+    icon = "steam";
+    categories = [
+      "Network"
+      "FileTransfer"
+      "Game"
+    ];
+    mimeType = [
+      "x-scheme-handler/steam"
+      "x-scheme-handler/steamlink"
+    ];
   };
 }
