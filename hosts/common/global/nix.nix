@@ -6,7 +6,7 @@
   nix = {
     settings = {
       trusted-users = ["root" "@wheel"];
-      auto-optimise-store = lib.mkDefault true;
+      auto-optimise-store = lib.mkDefault false;
       experimental-features = ["nix-command" "flakes" "repl-flake"];
     };
 
@@ -15,11 +15,16 @@
       keep-derivations = true
     '';
 
+    optimise = {
+      automatic = true;
+      dates = ["03:45"];
+    };
+
     gc = {
       automatic = true;
       dates = "weekly";
-      # Keep the last 10 generations
-      options = "--delete-older-than +10";
+      persistent = true;
+      options = "--delete-older-than 90d";
     };
 
     # Add each flake input as a registry
