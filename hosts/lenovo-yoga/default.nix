@@ -9,6 +9,7 @@
     ../common/global
     ../common/users/philip
 
+    ../common/optional/android.nix
     ../common/optional/bluetooth.nix
     ../common/optional/browser.nix
     ../common/optional/laptop-battery.nix

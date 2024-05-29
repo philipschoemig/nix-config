@@ -17,6 +17,7 @@ in {
         "wheel"
       ]
       ++ ifTheyExist [
+        "adbusers"
         "docker"
         "libvirtd"
         "podman"
