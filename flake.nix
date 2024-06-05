@@ -46,14 +46,14 @@
         modules = [
           ./hosts/lenovo-yoga
         ];
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit self inputs outputs;};
       };
       # Work laptop
       "secunet-thinkpad" = lib.nixosSystem {
         modules = [
           ./hosts/secunet-thinkpad
         ];
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit self inputs outputs;};
       };
     };
 

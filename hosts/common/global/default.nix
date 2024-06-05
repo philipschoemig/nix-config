@@ -1,5 +1,6 @@
 # This file (and the global directory) holds config that i use on all hosts
 {
+  self,
   inputs,
   outputs,
   ...
@@ -23,4 +24,6 @@
       allowUnfreePredicate = _: true;
     };
   };
+
+  system.configurationRevision = self.rev or "dirty";
 }
