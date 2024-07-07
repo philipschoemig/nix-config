@@ -10,12 +10,15 @@
       };
 
       displayManager = {
-        defaultSession = "xfce";
         # gdm.enable = true;
         lightdm.enable = true;
       };
 
-      layout = "de";
+      xkb.layout = "de";
+    };
+
+    displayManager = {
+      defaultSession = "xfce";
     };
   };
 
