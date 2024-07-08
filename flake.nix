@@ -48,6 +48,13 @@
         ];
         specialArgs = {inherit self inputs outputs;};
       };
+      # Personal mini-pc
+      "geekom-a7" = lib.nixosSystem {
+        modules = [
+          ./hosts/geekom-a7
+        ];
+        specialArgs = {inherit self inputs outputs;};
+      };
       # Work laptop
       "secunet-thinkpad" = lib.nixosSystem {
         modules = [
@@ -60,6 +67,11 @@
     homeConfigurations = {
       "philip@lenovo-yoga" = lib.homeManagerConfiguration {
         modules = [./home/philip/lenovo-yoga.nix];
+        pkgs = pkgsFor.x86_64-linux;
+        extraSpecialArgs = {inherit inputs outputs;};
+      };
+      "philip@geekom-a7" = lib.homeManagerConfiguration {
+        modules = [./home/philip/geekom-a7.nix];
         pkgs = pkgsFor.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
       };
