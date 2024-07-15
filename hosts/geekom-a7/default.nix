@@ -24,7 +24,10 @@
 
   networking.hostName = "geekom-a7";
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.powersave = false;
+  };
 
   programs = {
     light.enable = true;
