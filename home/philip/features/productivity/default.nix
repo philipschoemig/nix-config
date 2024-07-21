@@ -2,5 +2,6 @@
   home.packages = with pkgs; [
     calibre # E-book software
     evince # Document viewer
+    xournalpp # Notetaking software
   ];
 }
