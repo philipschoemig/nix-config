@@ -48,6 +48,7 @@ in {
         own_window_class = 'Conky',
         own_window_transparent = true,
         own_window_type = 'desktop',
+        own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
         update_interval = 2.0,
         update_interval_on_battery = 5.0,
         use_xft = true,
@@ -62,25 +63,18 @@ in {
       ''${color grey}$sysname $kernel on $machine
       ''${color grey}Host:$color $alignr $nodename
       ''${color grey}Uptime:$color $alignr $uptime
-      ''${color grey}Battery:$color $alignr $battery - $battery_time
+      # ''${color grey}Battery:$color $alignr $battery - $battery_time
       ''${color grey}Processes:$color $processes $alignr ''${color grey}Running:$color $running_processes
 
       ''${color white}CPU ''${hr 2}$color
       ''${color grey}Frequency:$color $alignr $freq_g GHz
       ''${color grey}Usage:$color $alignr $cpu%
-      ''${color grey}Temp:$color $alignr ''${hwmon acpitz temp 1}°C
+      ''${color grey}Temp:$color $alignr ''${hwmon k10temp temp 1}°C
 
       ''${color white}GPU ''${hr 2}$color
-      ''${if_match ''${exec lsmod | grep -c 'nvidia'} > 0}
-      ''${color grey}GPU Frequency:$color $alignr ''${nvidia gpufreq} MHz
-      ''${color grey}Memory Frequency:$color $alignr ''${nvidia memfreq} MHz
-      ''${color grey}Temp:$color $alignr ''${nvidia temp}°C
-      ''${endif}
-      ''${if_match ''${exec lsmod | grep -c 'amdgpu'} > 0}
-      ''${color grey}GPU Frequency:$color $alignr ''${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card0/device/pp_dpm_sclk} MHz
-      ''${color grey}Memory Frequency:$color $alignr ''${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card0/device/pp_dpm_mclk} MHz
+      ''${color grey}GPU Frequency:$color $alignr ''${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card1/device/pp_dpm_sclk | head -1} MHz
+      ''${color grey}Memory Frequency:$color $alignr ''${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card1/device/pp_dpm_mclk | head -1} MHz
       ''${color grey}Temp:$color $alignr ''${hwmon amdgpu temp 1}°C
-      ''${endif}
 
       ''${color white}MEMORY ''${hr 2}$color
       ''${color grey}RAM Usage:$color $alignr $mem/$memmax - $memperc%
