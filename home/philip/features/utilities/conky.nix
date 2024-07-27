@@ -72,8 +72,8 @@ in {
       ''${color grey}Temp:$color $alignr ''${hwmon k10temp temp 1}°C
 
       ''${color white}GPU ''${hr 2}$color
-      ''${color grey}GPU Frequency:$color $alignr ''${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card1/device/pp_dpm_sclk | head -1} MHz
-      ''${color grey}Memory Frequency:$color $alignr ''${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card1/device/pp_dpm_mclk | head -1} MHz
+      ''${color grey}GPU Frequency:$color $alignr ''${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card*/device/pp_dpm_sclk | head -1} MHz
+      ''${color grey}Memory Frequency:$color $alignr ''${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card*/device/pp_dpm_mclk | head -1} MHz
       ''${color grey}Temp:$color $alignr ''${hwmon amdgpu temp 1}°C
 
       ''${color white}MEMORY ''${hr 2}$color
