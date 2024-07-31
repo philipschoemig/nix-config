@@ -11,8 +11,10 @@ in {
     extraGroups =
       [
         "audio"
+        "dialout"
         "lp"
         "networkmanager"
+        "plugdev"
         "video"
         "wheel"
       ]
