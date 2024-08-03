@@ -32,7 +32,7 @@ in {
         show_graph_range = false,
 
         alignment = 'top_right',
-        background = true,
+        background = false,
         default_color = 'green',
         default_outline_color = 'white',
         default_shade_color = 'white',
