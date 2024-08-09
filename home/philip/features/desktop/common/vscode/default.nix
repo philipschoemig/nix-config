@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  home.packages = with pkgs; [
+    clang-tools # CLI tools for C++ development, required by extension llvm-vs-code-extensions.vscode-clangd
+    nil # Nix language server, required for extension jnoortheen.nix-ide
+  ];
+
   programs.vscode = {
     enable = true;
 
@@ -19,10 +24,11 @@
         gruntfuggly.todo-tree
         jebbs.plantuml
         jnoortheen.nix-ide
+        llvm-vs-code-extensions.vscode-clangd
         mkhl.direnv
         ms-azuretools.vscode-docker
         ms-python.python
-        ms-vscode.cpptools
+        ms-vscode.cpptools-extension-pack
         ms-vsliveshare.vsliveshare
         njpwerner.autodocstring
         redhat.vscode-yaml

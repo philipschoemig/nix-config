@@ -10,7 +10,6 @@
   home.packages = with pkgs; [
     ### Nix tools ###
     alejandra # Nix formatter
-    nil # Nix language server
     statix # Nix linter
 
     libqalculate # Calculator (CLI of qalculate)

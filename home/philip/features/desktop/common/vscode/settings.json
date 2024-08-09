@@ -1,4 +1,10 @@
 {
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -47,6 +53,7 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.codeActionsOnSave": ["source.organizeImports"],
   "editor.fontFamily": "'FiraCode Nerd Font Mono Regular'",
   "editor.fontLigatures": true,
