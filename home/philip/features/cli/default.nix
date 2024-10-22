@@ -9,7 +9,7 @@
 
   home.packages = with pkgs; [
     ### Nix tools ###
-    alejandra # Nix formatter
+    nixfmt-rfc-style # Nix formatter
     statix # Nix linter
 
     libqalculate # Calculator (CLI of qalculate)
