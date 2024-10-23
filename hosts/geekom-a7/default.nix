@@ -1,4 +1,6 @@
-{inputs, ...}: {
+{ inputs, ... }:
+
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-amd
     inputs.hardware.nixosModules.common-gpu-amd
@@ -12,6 +14,7 @@
 
     ../common/optional/bluetooth.nix
     ../common/optional/browser.nix
+    ../common/optional/ecryptfs.nix
     ../common/optional/opengl.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
