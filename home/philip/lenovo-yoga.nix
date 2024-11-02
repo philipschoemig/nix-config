@@ -6,6 +6,7 @@
     ./features/games
     ./features/productivity
     ./features/social
+    ./features/utilities
     ./features/virtualization
   ];
 }
