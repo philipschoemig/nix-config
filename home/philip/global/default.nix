@@ -2,11 +2,14 @@
   lib,
   pkgs,
   config,
+  outputs,
   ...
-}: {
+}:
+{
   imports = [
+    # Common CLI tools
     ../features/cli
-  ];
+  ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   programs = {
     home-manager.enable = true;
@@ -19,7 +22,7 @@
     username = lib.mkDefault "philip";
     homeDirectory = lib.mkDefault "/home/${config.home.username}";
     stateVersion = lib.mkDefault "23.05";
-    sessionPath = ["$HOME/.local/bin"];
+    sessionPath = [ "$HOME/.local/bin" ];
     sessionVariables = {
       FLAKE = "$HOME/Projects/github.com/philipschoemig/nix-config";
       RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";

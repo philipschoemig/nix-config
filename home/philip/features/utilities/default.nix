@@ -1,5 +1,4 @@
 {
   imports = [
-    ./conky.nix
   ];
 }
