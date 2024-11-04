@@ -21,62 +21,62 @@ in
       type = types.str;
       default = example;
       description = "Variable for CPU model name";
-      example = "''${exec "${escapeShellArg "sed - n 's/([^)]*)//g; /model name/ {s/.*: //; s/ CPU.*//; p; q}' /proc/cpuinfo"}"}";
+      example = ''''${execi 86400 sed - n 's/([^)]*)//g; /model name/ {s/.*: //; s/ CPU.*//; p; q}' /proc/cpuinfo}'';
     };
     cpuTemp = mkOption {
       type = types.str;
       default = null;
       description = "Variable for CPU temperature in °C";
-      example = "''${hwmon coretemp temp 1}";
+      example = ''''${hwmon coretemp temp 1}'';
     };
 
     gpuModel = mkOption {
       type = types.str;
       default = null;
       description = "Variable for GPU model name";
-      example = "''${nvidia modelname 0}";
+      example = ''''${nvidia modelname 0}'';
     };
     gpuFreq = mkOption {
       type = types.str;
       default = null;
       description = "Variable for GPU clock speed in MHz";
-      example = "''${nvidia gpufreq 0}";
+      example = ''''${nvidia gpufreq 0}'';
     };
     gpuMemFreq = mkOption {
       type = types.str;
       default = null;
       description = "Variable for GPU memory clock speed in MHz";
-      example = "''${nvidia memfreq 0}";
+      example = ''''${nvidia memfreq 0}'';
     };
     gpuTemp = mkOption {
       type = types.str;
       default = null;
       description = "Variable for GPU temperature in °C";
-      example = "''${nvidia gputemp 0}";
+      example = ''''${nvidia gputemp 0}'';
     };
 
     ioTemp = mkOption {
       type = types.str;
       default = null;
       description = "Variable for I/O temperature in °C";
-      example = "''${hwmon nvme temp 1}";
+      example = ''''${hwmon nvme temp 1}'';
     };
 
     networkWiredDevice = mkOption {
       type = types.str;
-      default = "";
+      default = "null";
       description = "Name of the wired interface device";
       example = "enp1s0";
     };
     networkWirelessDevice = mkOption {
       type = types.str;
-      default = "";
+      default = "null";
       description = "Name of the wireless interface device";
       example = "wlp1s0";
     };
     networkModemDevice = mkOption {
       type = types.str;
-      default = "";
+      default = "null";
       description = "Name of the modem interface device";
       example = "ppp0";
     };
@@ -132,12 +132,11 @@ in
         ''${color grey}$sysname $kernel on $machine
         ''${color grey}Host:$color $alignr $nodename
         ''${color grey}Uptime:$color $alignr $uptime
-        ''${if_empty $battery}
-        ''${else} ''${color grey}Battery:$color $alignr $battery - $battery_time
-        ''${endif}
+        ''${if_empty $battery} ''${else} ''${color grey}Battery:$color $alignr $battery_percent ($battery_status) - $battery_time ''${endif}
         ''${color grey}Processes:$color $processes $alignr ''${color grey}Running:$color $running_processes
 
         ''${color white}CPU ''${hr 2}$color
+        ''${color grey}Model:$color $alignr ${cfg.cpuModel}
         ''${color grey}Frequency:$color $alignr $freq_g GHz
         ''${color grey}Usage:$color $alignr $cpu%
         ''${color grey}Temp:$color $alignr ${cfg.cpuTemp}°C
@@ -175,7 +174,7 @@ in
         ${filesystems}
 
         ''${color white}NETWORK ''${hr 2}$color
-        ''${if_existing /proc/net/route ${cfg.networkWirelessDevice}} ''${color lightgrey}$alignc Wireless
+        ''${if_up ${cfg.networkWirelessDevice}} ''${color lightgrey}$alignc Wireless
         ''${color grey}IP address:$color $alignr ''${addr ${cfg.networkWirelessDevice}}
         ''${color grey}SSID:$color $alignr ''${wireless_essid ${cfg.networkWirelessDevice}}
         ''${color grey}Speed:$color $alignr ''${wireless_bitrate ${cfg.networkWirelessDevice}}
@@ -183,12 +182,12 @@ in
         ''${color grey}Inbound:$color ''${downspeed ${cfg.networkWirelessDevice}} $alignr ''${color grey}Total:$color ''${totaldown ${cfg.networkWirelessDevice}}
         ''${color grey}Outbound:$color ''${upspeed ${cfg.networkWirelessDevice}} $alignr ''${color grey}Total:$color ''${totalup ${cfg.networkWirelessDevice}}
         ''${endif}
-        ''${if_existing /proc/net/route ${cfg.networkWiredDevice}} ''${color lightgrey}$alignc Wired
+        ''${if_up ${cfg.networkWiredDevice}} ''${color lightgrey}$alignc Wired
         ''${color grey}IP address:$color $alignr ''${addr ${cfg.networkWiredDevice}}
         ''${color grey}Inbound:$color ''${downspeed ${cfg.networkWiredDevice}} $alignr ''${color grey}Total:$color ''${totaldown ${cfg.networkWiredDevice}}
         ''${color grey}Outbound:$color ''${upspeed ${cfg.networkWiredDevice}} $alignr ''${color grey}Total:$color ''${totalup ${cfg.networkWiredDevice}}
         ''${endif}
-        ''${if_existing /proc/net/route ${cfg.networkModemDevice}} ''${color lightgrey}$alignc Modem
+        ''${if_up ${cfg.networkModemDevice}} ''${color lightgrey}$alignc Modem
         ''${color grey}IP address:$color $alignr ''${addr ${cfg.networkModemDevice}}
         ''${color grey}Inbound:$color ''${downspeed ${cfg.networkModemDevice}} $alignr ''${color grey}Total:$color ''${totaldown ${cfg.networkModemDevice}}
         ''${color grey}Outbound:$color ''${upspeed ${cfg.networkModemDevice}} $alignr ''${color grey}Total:$color ''${totalup ${cfg.networkModemDevice}}
