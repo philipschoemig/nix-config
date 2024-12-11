@@ -1,8 +1,9 @@
-{config, ...}: {
-  imports = [./opengl.nix];
+{ config, ... }:
+{
+  imports = [ ./graphics.nix ];
 
   # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     # Modesetting is required.

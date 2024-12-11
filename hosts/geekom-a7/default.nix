@@ -15,7 +15,7 @@
     ../common/optional/bluetooth.nix
     ../common/optional/browser.nix
     ../common/optional/ecryptfs.nix
-    ../common/optional/opengl.nix
+    ../common/optional/graphics.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
