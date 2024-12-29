@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 
 {
   # Enable ecryptfs mount wrappers
@@ -6,5 +6,8 @@
 
   environment.systemPackages = with pkgs; [
     ecryptfs
+    gocryptfs
+    keyutils
+    vaults
   ];
 }

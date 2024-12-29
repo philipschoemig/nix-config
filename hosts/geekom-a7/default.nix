@@ -14,7 +14,7 @@
 
     ../common/optional/bluetooth.nix
     ../common/optional/browser.nix
-    ../common/optional/ecryptfs.nix
+    ../common/optional/cryptfs.nix
     ../common/optional/graphics.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix

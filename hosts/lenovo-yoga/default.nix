@@ -1,4 +1,5 @@
-{inputs, ...}: {
+{ inputs, ... }:
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
     inputs.hardware.nixosModules.common-pc-laptop
@@ -12,7 +13,7 @@
     ../common/optional/android.nix
     ../common/optional/bluetooth.nix
     ../common/optional/browser.nix
-    ../common/optional/ecryptfs.nix
+    ../common/optional/cryptfs.nix
     ../common/optional/laptop-battery.nix
     ../common/optional/nvidia.nix
     ../common/optional/office.nix
