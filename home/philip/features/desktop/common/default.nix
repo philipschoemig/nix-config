@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./vscode
     ./activitywatch.nix
@@ -7,6 +8,7 @@
     ./chromium.nix
     ./firefox.nix
     ./keepassxc.nix
+    ./safeeyes.nix
     ./ssh-agent.nix
     ./thunderbird.nix
     ./zathura.nix
@@ -25,10 +27,12 @@
   services = {
     gnome-keyring = {
       enable = true;
-      components = ["pkcs11" "secrets" "ssh"];
+      components = [
+        "pkcs11"
+        "secrets"
+        "ssh"
+      ];
     };
-
-    safeeyes.enable = true;
   };
 
   xdg.enable = true;
@@ -36,11 +40,11 @@
     enable = true;
 
     defaultApplications = {
-      "application/x-archive" = ["xarchiver.desktop"];
-      "application/zip" = ["xarchiver.desktop"];
-      "image/*" = ["qimgv.desktop"];
-      "image/jpeg" = ["qimgv.desktop"];
-      "image/png" = ["qimgv.desktop"];
+      "application/x-archive" = [ "xarchiver.desktop" ];
+      "application/zip" = [ "xarchiver.desktop" ];
+      "image/*" = [ "qimgv.desktop" ];
+      "image/jpeg" = [ "qimgv.desktop" ];
+      "image/png" = [ "qimgv.desktop" ];
     };
   };
 }

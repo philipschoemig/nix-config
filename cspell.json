@@ -1,5 +1,13 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["cryptfs", "ecryptfs", "gocryptfs", "keyutils", "pkgs"]
+  "words": [
+    "cryptfs",
+    "ecryptfs",
+    "gocryptfs",
+    "keyutils",
+    "pkgs",
+    "safeeyes",
+    "snixembed"
+  ]
 }
