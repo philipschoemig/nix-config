@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   lib,
   osConfig,
   ...
@@ -21,7 +22,7 @@ in
       type = types.str;
       default = example;
       description = "Variable for CPU model name";
-      example = ''''${execi 86400 sed - n 's/([^)]*)//g; /model name/ {s/.*: //; s/ CPU.*//; p; q}' /proc/cpuinfo}'';
+      example = ''''${execi 86400 sed -n 's/([^)]*)//g; /model name/ {s/.*: //; s/ CPU.*//; p; q}' /proc/cpuinfo}'';
     };
     cpuTemp = mkOption {
       type = types.str;
@@ -194,6 +195,21 @@ in
         ''${endif}
         ]];
       '';
+    };
+
+    systemd.user.services."conky" = {
+      Service = {
+        Environment = "PATH=$PATH:${
+          lib.makeBinPath (
+            with pkgs;
+            [
+              coreutils-full
+              gnugrep
+              gnused
+            ]
+          )
+        }";
+      };
     };
   };
 }
