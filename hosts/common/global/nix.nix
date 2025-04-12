@@ -27,7 +27,7 @@
       automatic = true;
       dates = "weekly";
       persistent = true;
-      options = "--delete-older-than 180d";
+      options = "--delete-older-than 90d";
     };
 
     # Add each flake input as a registry
