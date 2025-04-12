@@ -3,6 +3,7 @@
   imports = [
     ./vscode
     ./activitywatch.nix
+    ./alacritty.nix
     ./autorandr.nix
     ./blueman.nix
     ./chromium.nix
