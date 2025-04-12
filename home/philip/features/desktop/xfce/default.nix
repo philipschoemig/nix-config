@@ -7,6 +7,8 @@
     catfish # XFCE file search tool
   ];
 
+  home.file.".config/xfce4/helpers.rc".text = "TerminalEmulator=alacritty";
+
   xfconf.settings = {
     xfce4-session = {
       "compat/LaunchGNOME" = true;
