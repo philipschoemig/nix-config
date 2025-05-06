@@ -5,7 +5,7 @@
 
     hooks = {
       postswitch = {
-        # "restart-conky" = "${pkgs.systemd}/bin/systemctl --user restart conky.service";
+        "reload-conky" = "${pkgs.procps}/bin/pkill -USR1 conky";
       };
     };
 
