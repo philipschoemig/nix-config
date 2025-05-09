@@ -1,7 +1,6 @@
 { pkgs, ... }:
 {
   imports = [
-    ./vscode
     ./activitywatch.nix
     ./alacritty.nix
     ./autorandr.nix

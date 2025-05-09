@@ -2,6 +2,7 @@
   imports = [
     ./global
     ./features/accounts/posteo.nix
+    ./features/development
     ./features/desktop/xfce
     ./features/games
     ./features/productivity

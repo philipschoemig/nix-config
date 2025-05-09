@@ -1,7 +1,14 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+
+{
+  imports = [
+    ../java.nix # Required for SonarSource.sonarlint-vscode
+  ];
+
   home.packages = with pkgs; [
     clang-tools # CLI tools for C++ development, required by extension llvm-vs-code-extensions.vscode-clangd
     nil # Nix language server, required for extension jnoortheen.nix-ide
+    sonarlint-ls # Sonarlint language server, required for SonarSource.sonarlint-vscode
   ];
 
   programs.vscode = {
@@ -13,7 +20,8 @@
     enableUpdateCheck = false;
     enableExtensionUpdateCheck = true;
 
-    extensions = with pkgs.vscode-extensions;
+    extensions =
+      with pkgs.vscode-extensions;
       [
         arrterian.nix-env-selector
         bierner.markdown-mermaid
@@ -44,20 +52,26 @@
         {
           name = "code-spell-checker-german";
           publisher = "streetsidesoftware";
-          version = "2.2.2";
-          sha256 = "jW2bf1Njp1n67khT1+L2pxFBB+F2bTaAuofz2AqDPO4=";
+          version = "2.3.3";
+          sha256 = "sEdr8SQDFWgCq77flvbReILgWtT/ao8cJjrgC7RKO80=";
         }
         {
           name = "live-server";
           publisher = "ms-vscode";
-          version = "0.4.8";
-          sha256 = "/IrLq+nNxwQB1S1NIGYkv24DOY7Mc25eQ+orUfh42pg=";
+          version = "0.5.2024091601";
+          sha256 = "cwntFW5McTAcFs0f+vTlLpZffz3ApYGxu0ctJ2X6EuY=";
+        }
+        {
+          name = "sonarlint-vscode";
+          publisher = "SonarSource";
+          version = "4.21.0";
+          sha256 = "pnxHROhjbQq93CeWkBU3KwIPeXVDA4K6ifkkoGfagIM=";
         }
         {
           name = "vscode-coverage-gutters";
           publisher = "ryanluker";
-          version = "2.11.0";
-          sha256 = "laffIVS06BBQYZhhSP0BJiPhz0tZ2DKhJbVT95vYKOc=";
+          version = "2.13.0";
+          sha256 = "qgPKGikqNIeZkKfd0P0keAdxRl9XNzvEJKQy58eaUZk=";
         }
       ];
 
