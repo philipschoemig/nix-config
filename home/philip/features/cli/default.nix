@@ -1,10 +1,14 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+
+{
   imports = [
     ./bash.nix
     ./direnv.nix
+    ./fish.nix
     ./git.nix
     ./neovim.nix
     ./starship.nix
+    ./zellij.nix
   ];
 
   home.packages = with pkgs; [
