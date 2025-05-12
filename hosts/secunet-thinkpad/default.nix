@@ -1,4 +1,6 @@
-{inputs, ...}: {
+{ inputs, ... }:
+
+{
   imports = [
     inputs.hardware.nixosModules.common-cpu-intel
     inputs.hardware.nixosModules.common-pc-ssd
@@ -22,18 +24,24 @@
   boot.initrd.luks.devices = {
     "nixos-enc" = {
       device = "/dev/nvme0n1p2";
-      crypttabExtraOpts = ["fido2-device=auto"];
+      crypttabExtraOpts = [ "fido2-device=auto" ];
       # You may want to set preLVM to false if you need to start a network service first
       preLVM = true;
     };
   };
 
   # Necessary for the T14 Gen3 iris graphics, since they're not officially supported yet
-  boot.kernelParams = ["i915.force_probe=46a6"];
+  boot.kernelParams = [ "i915.force_probe=46a6" ];
 
   networking.hostName = "secunet-thinkpad"; # Define your hostname.
 
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
+
+  # Nix Binary Cache from Factory
+  nix.settings = {
+    substituters = [ "http://cache.factory.secunet.com/factory-1" ];
+    trusted-public-keys = [ "factory-1:Ai12PqfDkRmLzju4eE5/ucuDGXw4J31d3aTrz4TZKrk=" ];
+  };
 
   services.fwupd.enable = true;
 
