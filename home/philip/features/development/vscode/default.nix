@@ -3,6 +3,7 @@
 {
   imports = [
     ../java.nix # Required for SonarSource.sonarlint-vscode
+    ../nodejs.nix # Required for SonarSource.sonarlint-vscode
   ];
 
   home.packages = with pkgs; [
