@@ -45,6 +45,7 @@
       "image/*" = [ "qimgv.desktop" ];
       "image/jpeg" = [ "qimgv.desktop" ];
       "image/png" = [ "qimgv.desktop" ];
+      "x-scheme-handler/io.element.desktop" = "element-desktop.desktop";
     };
   };
 }
