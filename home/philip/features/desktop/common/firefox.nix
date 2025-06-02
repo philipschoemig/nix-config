@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+
+{
   programs.firefox = {
     enable = true;
 
@@ -16,21 +18,21 @@
 
       search.engines = {
         "Startpage" = {
-          urls = [{template = "https://www.startpage.com/sp/search?query={searchTerms}";}];
+          urls = [ { template = "https://www.startpage.com/sp/search?query={searchTerms}"; } ];
           iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-16x16--default.png";
-          definedAliases = ["@startpage"];
+          definedAliases = [ "@startpage" ];
         };
 
         "SearXNG" = {
-          urls = [{template = "https://search.sapti.me/search?q={searchTerms}";}];
+          urls = [ { template = "https://search.sapti.me/search?q={searchTerms}"; } ];
           iconUpdateURL = "https://search.sapti.me/static/themes/simple/img/favicon.png";
-          definedAliases = ["@searx"];
+          definedAliases = [ "@searx" ];
         };
 
         "SearXNG Alternative" = {
-          urls = [{template = "https://search.demoniak.ch/search?q={searchTerms}";}];
+          urls = [ { template = "https://search.demoniak.ch/search?q={searchTerms}"; } ];
           iconUpdateURL = "https://search.demoniak.ch/static/themes/simple/img/favicon.png";
-          definedAliases = ["@searx-alt"];
+          definedAliases = [ "@searx-alt" ];
         };
 
         "NixOS Packages" = {
@@ -51,7 +53,7 @@
           ];
 
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = ["@nixpkgs"];
+          definedAliases = [ "@nixpkgs" ];
         };
 
         "NixOS Options" = {
@@ -72,37 +74,37 @@
           ];
 
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = ["@nixopts"];
+          definedAliases = [ "@nixopts" ];
         };
 
         "NixOS Wiki" = {
-          urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
+          urls = [ { template = "https://nixos.wiki/index.php?search={searchTerms}"; } ];
           iconUpdateURL = "https://nixos.wiki/favicon.png";
-          definedAliases = ["@nixwiki"];
+          definedAliases = [ "@nixwiki" ];
         };
 
         "Home-Manager Options" = {
-          urls = [{template = "https://mipmip.github.io/home-manager-option-search/?query={searchTerms}";}];
+          urls = [ { template = "https://home-manager-options.extranix.com/?query={searchTerms}"; } ];
           icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-          definedAliases = ["@homemanager"];
+          definedAliases = [ "@homemanager" ];
         };
 
         "Rust Crates" = {
-          urls = [{template = "https://crates.io/search?q={searchTerms}";}];
+          urls = [ { template = "https://crates.io/search?q={searchTerms}"; } ];
           iconUpdateURL = "https://crates.io/favicon.ico";
-          definedAliases = ["@rustcrates"];
+          definedAliases = [ "@rustcrates" ];
         };
 
         "Rust Docs" = {
-          urls = [{template = "https://docs.rs/releases/search?query={searchTerms}";}];
+          urls = [ { template = "https://docs.rs/releases/search?query={searchTerms}"; } ];
           iconUpdateURL = "https://docs.rs/-/rustdoc.static/favicon-32x32-422f7d1d52889060.png";
-          definedAliases = ["@rustdocs"];
+          definedAliases = [ "@rustdocs" ];
         };
 
         "dict.cc Dictionary" = {
-          urls = [{template = "https://www.dict.cc/?s={searchTerms}";}];
+          urls = [ { template = "https://www.dict.cc/?s={searchTerms}"; } ];
           iconUpdateURL = "https://www4.dict.cc/img/favicons/favicon4.png";
-          definedAliases = ["@dictcc"];
+          definedAliases = [ "@dictcc" ];
         };
       };
 
@@ -125,9 +127,9 @@
   };
 
   xdg.mimeApps.defaultApplications = {
-    "text/html" = ["firefox.desktop"];
-    "text/xml" = ["firefox.desktop"];
-    "x-scheme-handler/http" = ["firefox.desktop"];
-    "x-scheme-handler/https" = ["firefox.desktop"];
+    "text/html" = [ "firefox.desktop" ];
+    "text/xml" = [ "firefox.desktop" ];
+    "x-scheme-handler/http" = [ "firefox.desktop" ];
+    "x-scheme-handler/https" = [ "firefox.desktop" ];
   };
 }
