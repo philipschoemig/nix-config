@@ -2,6 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    nodejs-slim # Node.js LTS version, slim variant
+    nodejs # Node.js LTS version
   ];
 }

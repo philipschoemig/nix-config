@@ -77,6 +77,7 @@
   },
   "prettier.proseWrap": "always",
   "redhat.telemetry.enabled": false,
+  "sonarlint.pathToNodeExecutable": "node",
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Default Light Modern"
 }
