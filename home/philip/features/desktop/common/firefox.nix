@@ -7,7 +7,7 @@
     profiles."default" = {
       isDefault = true;
 
-      extensions = with pkgs.inputs.firefox-addons; [
+      extensions.packages = with pkgs.inputs.firefox-addons; [
         ghostery
         keepassxc-browser
         leechblock-ng
@@ -19,19 +19,19 @@
       search.engines = {
         "Startpage" = {
           urls = [ { template = "https://www.startpage.com/sp/search?query={searchTerms}"; } ];
-          iconUpdateURL = "https://www.startpage.com/sp/cdn/favicons/favicon-16x16--default.png";
+          icon = "https://www.startpage.com/sp/cdn/favicons/favicon-16x16--default.png";
           definedAliases = [ "@startpage" ];
         };
 
         "SearXNG" = {
           urls = [ { template = "https://search.sapti.me/search?q={searchTerms}"; } ];
-          iconUpdateURL = "https://search.sapti.me/static/themes/simple/img/favicon.png";
+          icon = "https://search.sapti.me/static/themes/simple/img/favicon.png";
           definedAliases = [ "@searx" ];
         };
 
         "SearXNG Alternative" = {
           urls = [ { template = "https://search.demoniak.ch/search?q={searchTerms}"; } ];
-          iconUpdateURL = "https://search.demoniak.ch/static/themes/simple/img/favicon.png";
+          icon = "https://search.demoniak.ch/static/themes/simple/img/favicon.png";
           definedAliases = [ "@searx-alt" ];
         };
 
@@ -79,7 +79,7 @@
 
         "NixOS Wiki" = {
           urls = [ { template = "https://nixos.wiki/index.php?search={searchTerms}"; } ];
-          iconUpdateURL = "https://nixos.wiki/favicon.png";
+          icon = "https://nixos.wiki/favicon.png";
           definedAliases = [ "@nixwiki" ];
         };
 
@@ -91,19 +91,19 @@
 
         "Rust Crates" = {
           urls = [ { template = "https://crates.io/search?q={searchTerms}"; } ];
-          iconUpdateURL = "https://crates.io/favicon.ico";
+          icon = "https://crates.io/favicon.ico";
           definedAliases = [ "@rustcrates" ];
         };
 
         "Rust Docs" = {
           urls = [ { template = "https://docs.rs/releases/search?query={searchTerms}"; } ];
-          iconUpdateURL = "https://docs.rs/-/rustdoc.static/favicon-32x32-422f7d1d52889060.png";
+          icon = "https://docs.rs/-/rustdoc.static/favicon-32x32-422f7d1d52889060.png";
           definedAliases = [ "@rustdocs" ];
         };
 
         "dict.cc Dictionary" = {
           urls = [ { template = "https://www.dict.cc/?s={searchTerms}"; } ];
-          iconUpdateURL = "https://www4.dict.cc/img/favicons/favicon4.png";
+          icon = "https://www4.dict.cc/img/favicons/favicon4.png";
           definedAliases = [ "@dictcc" ];
         };
       };
