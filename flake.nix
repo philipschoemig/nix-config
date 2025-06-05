@@ -85,6 +85,13 @@
             inherit inputs outputs;
           };
         };
+        "philip@chromebook" = lib.homeManagerConfiguration {
+          modules = [ ./home/philip/chromebook.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+        };
         "philip@secunet-thinkpad" = lib.homeManagerConfiguration {
           modules = [ ./home/philip/secunet-thinkpad.nix ];
           pkgs = pkgsFor.x86_64-linux;
