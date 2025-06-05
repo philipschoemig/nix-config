@@ -5,6 +5,7 @@
     enable = true;
     enableBashIntegration = false;
     enableFishIntegration = false;
+    exitShellOnExit = true;
   };
 
   programs.bash.bashrcExtra = ''
