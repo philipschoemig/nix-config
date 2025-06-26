@@ -85,4 +85,13 @@
       userSettings = builtins.fromJSON (builtins.readFile ./settings.json);
     };
   };
+
+  xdg.mimeApps.defaultApplications = {
+    "application/json" = "codium.desktop";
+    "application/xml" = "codium.desktop";
+    "text/csv" = "codium.desktop";
+    "text/markdown" = "codium.desktop";
+    "text/plain" = "codium.desktop";
+    "text/xml" = "codium.desktop";
+  };
 }
