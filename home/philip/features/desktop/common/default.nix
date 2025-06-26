@@ -40,7 +40,13 @@
     enable = true;
 
     defaultApplications = {
+      "application/x-7z-compressed" = [ "xarchiver.desktop" ];
       "application/x-archive" = [ "xarchiver.desktop" ];
+      "application/x-bzip" = [ "xarchiver.desktop" ];
+      "application/x-bzip2" = [ "xarchiver.desktop" ];
+      "application/x-gzip" = [ "xarchiver.desktop" ];
+      "application/x-tar" = [ "xarchiver.desktop" ];
+      "application/gzip" = [ "xarchiver.desktop" ];
       "application/zip" = [ "xarchiver.desktop" ];
       "image/*" = [ "qimgv.desktop" ];
       "image/jpeg" = [ "qimgv.desktop" ];
