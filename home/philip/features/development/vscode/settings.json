@@ -77,7 +77,9 @@
   },
   "prettier.proseWrap": "always",
   "redhat.telemetry.enabled": false,
+  "security.workspace.trust.untrustedFiles": "newWindow",
   "sonarlint.pathToNodeExecutable": "node",
+  "window.newWindowDimensions": "maximized",
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Default Light Modern"
 }
