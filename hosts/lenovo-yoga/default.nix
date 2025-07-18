@@ -16,6 +16,7 @@
     ../common/optional/browser.nix
     ../common/optional/cryptfs.nix
     ../common/optional/laptop-battery.nix
+    ../common/optional/network.nix
     ../common/optional/nvidia.nix
     ../common/optional/office.nix
     ../common/optional/paperless.nix
@@ -28,10 +29,6 @@
   ];
 
   networking.hostName = "lenovo-yoga";
-
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  networking.networkmanager.enable = true;
 
   programs = {
     light.enable = true;
