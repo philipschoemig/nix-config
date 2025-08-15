@@ -16,6 +16,7 @@
     ../common/optional/browser.nix
     ../common/optional/cryptfs.nix
     ../common/optional/graphics.nix
+    ../common/optional/openssh.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
