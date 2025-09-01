@@ -35,6 +35,12 @@
           definedAliases = [ "@searx-alt" ];
         };
 
+        "Nix API Search" = {
+          urls = [ { template = "https://noogle.dev/q?term={searchTerms}"; } ];
+          icon = "https://noogle.dev/favicon.png";
+          definedAliases = [ "@nixapi" ];
+        };
+
         "NixOS Packages" = {
           urls = [
             {
@@ -78,8 +84,8 @@
         };
 
         "NixOS Wiki" = {
-          urls = [ { template = "https://nixos.wiki/index.php?search={searchTerms}"; } ];
-          icon = "https://nixos.wiki/favicon.png";
+          urls = [ { template = "https://wiki.nixos.org/w/index.php?search={searchTerms}"; } ];
+          icon = "https://wiki.nixos.org/nixos.png";
           definedAliases = [ "@nixwiki" ];
         };
 
