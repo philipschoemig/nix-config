@@ -204,8 +204,10 @@ in
             with pkgs;
             [
               coreutils-full
+              gawk
               gnugrep
               gnused
+              pciutils
             ]
           )
         }";
