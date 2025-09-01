@@ -16,6 +16,7 @@
     ../common/optional/laptop-battery.nix
     ../common/optional/office.nix
     ../common/optional/pipewire.nix
+    ../common/optional/printing.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/xserver.nix
   ];
