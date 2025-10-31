@@ -1,5 +1,6 @@
 {
   imports = [
     ./vscode
+    ./python.nix
   ];
 }
