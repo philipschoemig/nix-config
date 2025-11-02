@@ -27,6 +27,7 @@
         [
           arrterian.nix-env-selector
           bierner.markdown-mermaid
+          charliermarsh.ruff
           davidanson.vscode-markdownlint
           eamodio.gitlens
           esbenp.prettier-vscode
