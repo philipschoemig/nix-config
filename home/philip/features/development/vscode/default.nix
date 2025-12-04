@@ -37,7 +37,6 @@
           jnoortheen.nix-ide
           llvm-vs-code-extensions.vscode-clangd
           mkhl.direnv
-          ms-azuretools.vscode-docker
           ms-python.python
           ms-vscode.cpptools-extension-pack
           ms-vsliveshare.vsliveshare
@@ -53,28 +52,34 @@
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           # VS Code extensions that are not part of pkgs.vscode-extensions.
           {
-            name = "code-spell-checker-german";
-            publisher = "streetsidesoftware";
-            version = "2.3.3";
-            sha256 = "sEdr8SQDFWgCq77flvbReILgWtT/ao8cJjrgC7RKO80=";
+            name = "vscode-containers";
+            publisher = "ms-azuretools";
+            version = "2.3.0";
+            sha256 = "zrEZpd2geX2G4u6LkIk3d6C7vhwZZ4lwHGQR3Z0OWY4=";
           }
           {
             name = "live-server";
             publisher = "ms-vscode";
-            version = "0.5.2024091601";
-            sha256 = "cwntFW5McTAcFs0f+vTlLpZffz3ApYGxu0ctJ2X6EuY=";
-          }
-          {
-            name = "sonarlint-vscode";
-            publisher = "SonarSource";
-            version = "4.21.0";
-            sha256 = "pnxHROhjbQq93CeWkBU3KwIPeXVDA4K6ifkkoGfagIM=";
+            version = "0.5.2025091501";
+            sha256 = "P/VY3RWEv6S2Y0czxPnPWM94C7ursF957xe1L68VYWY=";
           }
           {
             name = "vscode-coverage-gutters";
             publisher = "ryanluker";
-            version = "2.13.0";
-            sha256 = "qgPKGikqNIeZkKfd0P0keAdxRl9XNzvEJKQy58eaUZk=";
+            version = "2.14.0";
+            sha256 = "waF3FmncUsXqWFWGRy9X7RQ29BDRYlaqyFhEXg4HXNo=";
+          }
+          {
+            name = "sonarlint-vscode";
+            publisher = "SonarSource";
+            version = "4.35.1";
+            sha256 = "GOTt/fGyyHlTkU5jBs7r/Hf6vJ2ASeU0Y9XjaLdO6q0=";
+          }
+          {
+            name = "code-spell-checker-german";
+            publisher = "streetsidesoftware";
+            version = "2.3.4";
+            sha256 = "zc0cv4AOswvYcC4xJOq2JEPMQ5qTj9Dad5HhxtNETEs=";
           }
         ];
 
