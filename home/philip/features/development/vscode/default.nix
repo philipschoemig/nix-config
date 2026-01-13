@@ -9,7 +9,8 @@
   home.packages = with pkgs; [
     clang-tools # CLI tools for C++ development, required by extension llvm-vs-code-extensions.vscode-clangd
     nil # Nix language server, required for extension jnoortheen.nix-ide
-    sonarlint-ls # Sonarlint language server, required for SonarSource.sonarlint-vscode
+    # TODO: temporarily disabled sonarlint-ls because of a build error (see https://github.com/nixos/nixpkgs/issues/467353)
+    # sonarlint-ls # Sonarlint language server, required for SonarSource.sonarlint-vscode
   ];
 
   programs.vscode = {

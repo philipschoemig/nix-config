@@ -5,7 +5,7 @@
     ./features/development
   ];
 
-  programs.git.userEmail = "philip.schoemig@secunet.com";
+  programs.git.settings.user.email = "philip.schoemig@secunet.com";
 
   programs.ssh = {
     enable = true;
