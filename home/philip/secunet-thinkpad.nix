@@ -9,13 +9,21 @@
 
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     matchBlocks = {
       "git.seven.secucloud.secunet.com" = {
         identityFile = "~/.ssh/id_ed25519";
         identitiesOnly = true;
       };
-      "edge" = {
+      "gwp" = {
         hostname = "10.100.0.2";
+        user = "root";
+        extraOptions = {
+          "StrictHostKeyChecking" = "no";
+          "UserKnownHostsFile" = "/dev/null";
+        };
+      };
+      "gwp-juno" = {
         user = "root";
         extraOptions = {
           "StrictHostKeyChecking" = "no";
@@ -54,12 +62,12 @@
 
   conkyConfig = {
     enable = true;
-    cpuTemp = ''''${hwmon coretemp temp 1}'';
+    cpuTemp = "\${hwmon coretemp temp 1}";
     gpuModel = ''''${exec lspci -mm | awk -F '\"|\" \"|\\(' '/"Display|"3D|"VGA/ {print $3 " " $4}'}'';
     gpuFreq = ''''${exec grep -Po '\d+:\s\K(\d+)(?=.*\*$)' /sys/class/drm/card*/device/pp_dpm_sclk | head -1}'';
-    gpuMemFreq = ''N/A'';
-    gpuTemp = ''N/A'';
-    ioTemp = ''''${hwmon nvme temp 1}'';
+    gpuMemFreq = "N/A";
+    gpuTemp = "N/A";
+    ioTemp = "\${hwmon nvme temp 1}";
     networkWiredDevice = "enp0s31f6";
     networkWirelessDevice = "wlp0s20f3";
   };
