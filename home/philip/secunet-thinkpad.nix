@@ -1,3 +1,5 @@
+{ options, pkgs, ... }:
+
 {
   imports = [
     ./global
@@ -62,11 +64,12 @@
 
   conkyConfig = {
     enable = true;
-    cpuTemp = "\${hwmon coretemp temp 1}";
+    packages = options.conkyConfig.packages.default ++ [
+      pkgs.gawk
+      pkgs.pciutils
+    ];
     gpuModel = ''''${exec lspci -mm | awk -F '\"|\" \"|\\(' '/"Display|"3D|"VGA/ {print $3 " " $4}'}'';
-    gpuFreq = "\${exec cat /sys/class/drm/card*/gt_cur_freq_mhz | head -1}";
-    gpuMemFreq = "N/A";
-    gpuTemp = "N/A";
+    gpuCoreFreq = "\${exec cat /sys/class/drm/card*/gt_cur_freq_mhz | head -1}";
     ioTemp = "\${hwmon nvme temp 1}";
     networkWiredDevice = "enp0s31f6";
     networkWirelessDevice = "wlp0s20f3";
