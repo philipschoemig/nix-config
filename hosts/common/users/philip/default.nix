@@ -2,32 +2,34 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-in {
+in
+{
   users.users.philip = {
     isNormalUser = true;
     description = "Philip Schömig";
-    extraGroups =
-      [
-        "audio"
-        "dialout"
-        "lp"
-        "networkmanager"
-        "plugdev"
-        "video"
-        "wheel"
-      ]
-      ++ ifTheyExist [
-        "adbusers"
-        "docker"
-        "libvirtd"
-        "podman"
-        "scanner"
-        "wireshark"
-      ];
+    initialPassword = "changeme";
+    extraGroups = [
+      "audio"
+      "dialout"
+      "lp"
+      "networkmanager"
+      "plugdev"
+      "video"
+      "wheel"
+    ]
+    ++ ifTheyExist [
+      "adbusers"
+      "docker"
+      "libvirtd"
+      "podman"
+      "scanner"
+      "wireshark"
+    ];
 
-    packages = [pkgs.home-manager];
+    packages = [ pkgs.home-manager ];
   };
 
   home-manager.users.philip = import ../../../../home/philip/${config.networking.hostName}.nix;

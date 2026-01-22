@@ -3,16 +3,17 @@
 {
   imports = [
     ./global
-    ./features/accounts/posteo.nix
-    ./features/development
-    ./features/desktop/xfce
-    ./features/productivity
-    ./features/social
-    ./features/virtualization
+    ./features/development/python.nix
+    # ./features/accounts/posteo.nix
+    # ./features/development
+    # ./features/desktop/xfce
+    # ./features/productivity
+    # ./features/social
+    # ./features/virtualization
   ];
 
   conkyConfig = {
-    enable = true;
+    enable = false;
     packages = options.conkyConfig.packages.default ++ [
       pkgs.gnugrep
       pkgs.nvtopPackages.amd
