@@ -13,16 +13,15 @@
     ../common/users/philip
 
     ../common/optional/bluetooth.nix
-    # ../common/optional/browser.nix
     ../common/optional/cryptfs.nix
     ../common/optional/graphics.nix
     ../common/optional/kmscon.nix
+    ../common/optional/kodi.nix
     ../common/optional/openssh.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/systemd-boot.nix
-    # ../common/optional/xserver.nix
   ];
 
   boot.loader.systemd-boot.xbootldrMountPoint = "/boot";
