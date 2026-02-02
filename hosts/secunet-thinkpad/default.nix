@@ -18,7 +18,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/systemd-boot.nix
-    ../common/optional/xserver.nix
+    ../common/optional/xfce.nix
   ];
 
   boot.initrd.systemd.enable = true;

@@ -25,7 +25,7 @@
     ../common/optional/printing.nix
     ../common/optional/smartcard.nix
     ../common/optional/systemd-boot.nix
-    ../common/optional/xserver.nix
+    ../common/optional/xfce.nix
   ];
 
   networking.hostName = "lenovo-yoga";
