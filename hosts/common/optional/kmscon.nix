@@ -4,8 +4,10 @@
   services.kmscon = {
     enable = true;
     hwRender = true;
-    extraConfig = ''
-      xkb-layout=de
+    # agetty call based on https://fedoraproject.org/wiki/Changes/UseKmsconVTConsole#How_To_Test
+    extraOptions = ''
+      --xkb-layout=de --login -- \
+      ${pkgs.util-linux}/bin/agetty --noclear --login-options '-p -- \u' -- -
     '';
     fonts = [
       {
