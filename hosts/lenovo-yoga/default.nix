@@ -30,6 +30,11 @@
 
   networking.hostName = "lenovo-yoga";
 
+  hardware.nvidia.prime = {
+    intelBusId = "PCI:0:2:0";
+    nvidiaBusId = "PCI:43:0:0";
+  };
+
   programs = {
     light.enable = true;
     dconf.enable = true;
