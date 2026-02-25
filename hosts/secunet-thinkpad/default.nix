@@ -35,6 +35,9 @@
   boot.kernelParams = [ "i915.force_probe=46a6" ];
 
   networking.hostName = "secunet-thinkpad"; # Define your hostname.
+  networking.hosts = {
+    "192.168.0.103" = [ "juno.ews" ];
+  };
 
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
