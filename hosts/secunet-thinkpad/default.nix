@@ -34,10 +34,10 @@
   # Necessary for the T14 Gen3 iris graphics, since they're not officially supported yet
   boot.kernelParams = [ "i915.force_probe=46a6" ];
 
+  # Copy the /etc/hosts file instead of symlinking to allow temporary modifications
+  environment.etc.hosts.mode = "0600";
+
   networking.hostName = "secunet-thinkpad"; # Define your hostname.
-  networking.hosts = {
-    "192.168.0.103" = [ "juno.ews" ];
-  };
 
   networking.networkmanager.enable = true; # Easiest to use and most distros use this by default.
 
