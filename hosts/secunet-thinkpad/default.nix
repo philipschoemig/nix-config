@@ -35,7 +35,7 @@
   boot.kernelParams = [ "i915.force_probe=46a6" ];
 
   # Copy the /etc/hosts file instead of symlinking to allow temporary modifications
-  environment.etc.hosts.mode = "0600";
+  environment.etc.hosts.mode = "0644";
 
   networking.hostName = "secunet-thinkpad"; # Define your hostname.
 
