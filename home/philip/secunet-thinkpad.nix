@@ -25,6 +25,13 @@
           "UserKnownHostsFile" = "/dev/null";
         };
       };
+      "gwp-edge" = {
+        user = "root";
+        extraOptions = {
+          "StrictHostKeyChecking" = "no";
+          "UserKnownHostsFile" = "/dev/null";
+        };
+      };
       "gwp-juno" = {
         user = "root";
         extraOptions = {
