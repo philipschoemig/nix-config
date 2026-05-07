@@ -51,6 +51,8 @@
     ];
   };
 
+  virtualisation.virtualbox.host.enable = true;
+
   # Nix Binary Cache from Factory
   nix.settings = {
     substituters = [ "http://cache.factory.secunet.com/factory-1" ];

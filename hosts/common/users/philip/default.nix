@@ -26,6 +26,7 @@ in
       "libvirtd"
       "podman"
       "scanner"
+      "vboxusers"
       "wireshark"
     ];
 
