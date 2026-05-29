@@ -6,8 +6,8 @@
     ./features/development/python.nix
     # ./features/accounts/posteo.nix
     # ./features/development
-    ./features/desktop/games
     ./features/desktop/xfce
+    ./features/games
     # ./features/productivity
     # ./features/social
     # ./features/virtualization
