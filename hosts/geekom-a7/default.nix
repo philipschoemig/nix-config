@@ -13,15 +13,17 @@
     ../common/users/philip
 
     ../common/optional/bluetooth.nix
+    ../common/optional/browser.nix
     ../common/optional/cryptfs.nix
     ../common/optional/graphics.nix
     ../common/optional/kmscon.nix
-    ../common/optional/kodi.nix
+    # ../common/optional/kodi.nix
     ../common/optional/openssh.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/systemd-boot.nix
+    ../common/optional/xfce.nix
   ];
 
   boot.loader.systemd-boot.xbootldrMountPoint = "/boot";
@@ -44,12 +46,12 @@
   services.thermald.enable = true;
 
   # Enable automatic login for the user.
-  # services.displayManager.autoLogin.enable = true;
-  # services.displayManager.autoLogin.user = "philip";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "philip";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  # systemd.services."getty@tty1".enable = false;
-  # systemd.services."autovt@tty1".enable = false;
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

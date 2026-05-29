@@ -6,14 +6,15 @@
     ./features/development/python.nix
     # ./features/accounts/posteo.nix
     # ./features/development
-    # ./features/desktop/xfce
+    ./features/desktop/games
+    ./features/desktop/xfce
     # ./features/productivity
     # ./features/social
     # ./features/virtualization
   ];
 
   conkyConfig = {
-    enable = false;
+    enable = true;
     packages = options.conkyConfig.packages.default ++ [
       pkgs.gnugrep
       pkgs.nvtopPackages.amd
