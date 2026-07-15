@@ -3,7 +3,7 @@
 {
   imports = [ ../common ];
 
-  home.packages = with pkgs.xfce; [
+  home.packages = with pkgs; [
     catfish # XFCE file search tool
   ];
 

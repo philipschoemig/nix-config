@@ -30,15 +30,14 @@
 
   networking.hostName = "lenovo-yoga";
 
+  hardware.acpilight.enable = true;
+
   hardware.nvidia.prime = {
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:43:0:0";
   };
 
-  programs = {
-    light.enable = true;
-    dconf.enable = true;
-  };
+  programs.dconf.enable = true;
 
   services.logind.settings.Login = {
     HandleLidSwitch = "suspend";

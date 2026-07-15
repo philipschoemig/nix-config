@@ -7,6 +7,8 @@
 {
   programs.firefox = {
     enable = true;
+    # TODO: think about moving this to $XDG_CONFIG_HOME/mozilla/firefox
+    configPath = ".mozilla/firefox";
 
     profiles.default = {
       isDefault = true;

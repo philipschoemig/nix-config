@@ -13,11 +13,8 @@
     # sonarlint-ls # Sonarlint language server, required for SonarSource.sonarlint-vscode
   ];
 
-  programs.vscode = {
+  programs.vscodium = {
     enable = true;
-
-    # Use VSCodium instead of VSCode.
-    package = pkgs.vscodium;
 
     profiles."default" = {
       enableUpdateCheck = false;

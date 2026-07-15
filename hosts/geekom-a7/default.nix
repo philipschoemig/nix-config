@@ -29,6 +29,8 @@
   boot.loader.systemd-boot.xbootldrMountPoint = "/boot";
   boot.loader.efi.efiSysMountPoint = "/efi";
 
+  hardware.acpilight.enable = true;
+
   networking.hostName = "geekom-a7";
 
   networking.networkmanager = {
@@ -36,10 +38,7 @@
     wifi.powersave = false;
   };
 
-  programs = {
-    light.enable = true;
-    dconf.enable = true;
-  };
+  programs.dconf.enable = true;
 
   services.fwupd.enable = true;
 
