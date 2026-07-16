@@ -32,9 +32,12 @@
 
   hardware.acpilight.enable = true;
 
-  hardware.nvidia.prime = {
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:43:0:0";
+  hardware.nvidia = {
+    branch = "legacy_580";
+    prime = {
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:43:0:0";
+    };
   };
 
   programs.dconf.enable = true;
