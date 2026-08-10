@@ -12,59 +12,47 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks = {
+    settings = {
       "git.seven.secucloud.secunet.com" = {
-        identityFile = "~/.ssh/id_ed25519";
-        identitiesOnly = true;
+        IdentityFile = "~/.ssh/id_ed25519";
+        IdentitiesOnly = true;
       };
       "gwp" = {
-        hostname = "10.100.0.2";
-        user = "root";
-        extraOptions = {
-          "StrictHostKeyChecking" = "no";
-          "UserKnownHostsFile" = "/dev/null";
-        };
+        Hostname = "10.100.0.2";
+        User = "root";
+        StrictHostKeyChecking = "no";
+        UserKnownHostsFile = "/dev/null";
       };
       "gwp-edge" = {
-        user = "root";
-        extraOptions = {
-          "StrictHostKeyChecking" = "no";
-          "UserKnownHostsFile" = "/dev/null";
-        };
+        User = "root";
+        StrictHostKeyChecking = "no";
+        UserKnownHostsFile = "/dev/null";
       };
       "gwp-juno" = {
-        user = "root";
-        extraOptions = {
-          "StrictHostKeyChecking" = "no";
-          "UserKnownHostsFile" = "/dev/null";
-        };
+        User = "root";
+        StrictHostKeyChecking = "no";
+        UserKnownHostsFile = "/dev/null";
       };
       "test_client" = {
-        hostname = "localhost";
-        port = 2221;
-        user = "root";
-        extraOptions = {
-          "StrictHostKeyChecking" = "no";
-          "UserKnownHostsFile" = "/dev/null";
-        };
+        Hostname = "localhost";
+        Port = 2221;
+        User = "root";
+        StrictHostKeyChecking = "no";
+        UserKnownHostsFile = "/dev/null";
       };
       "test_router" = {
-        hostname = "localhost";
-        port = 2222;
-        user = "root";
-        extraOptions = {
-          "StrictHostKeyChecking" = "no";
-          "UserKnownHostsFile" = "/dev/null";
-        };
+        Hostname = "localhost";
+        Port = 2222;
+        User = "root";
+        StrictHostKeyChecking = "no";
+        UserKnownHostsFile = "/dev/null";
       };
       "test_server" = {
-        hostname = "localhost";
-        port = 2223;
-        user = "root";
-        extraOptions = {
-          "StrictHostKeyChecking" = "no";
-          "UserKnownHostsFile" = "/dev/null";
-        };
+        Hostname = "localhost";
+        Port = 2223;
+        User = "root";
+        StrictHostKeyChecking = "no";
+        UserKnownHostsFile = "/dev/null";
       };
     };
   };
