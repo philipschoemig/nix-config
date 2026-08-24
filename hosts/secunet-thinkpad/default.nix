@@ -14,10 +14,12 @@
     ../common/optional/browser.nix
     ../common/optional/docker.nix
     ../common/optional/laptop-battery.nix
+    ../common/optional/network.nix
     ../common/optional/office.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/systemd-boot.nix
+    ../common/optional/vpn.nix
     ../common/optional/xfce.nix
   ];
 
@@ -37,19 +39,7 @@
   # Copy the /etc/hosts file instead of symlinking to allow temporary modifications
   environment.etc.hosts.mode = "0644";
 
-  environment.systemPackages = with pkgs; [
-    strongswan
-  ];
-
   networking.hostName = "secunet-thinkpad"; # Define your hostname.
-
-  networking.networkmanager = {
-    enable = true; # Easiest to use and most distros use this by default.
-    plugins = with pkgs; [
-      networkmanager-openvpn
-      networkmanager-strongswan
-    ];
-  };
 
   virtualisation.virtualbox.host.enable = true;
 

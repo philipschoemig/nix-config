@@ -18,11 +18,13 @@
     ../common/optional/graphics.nix
     ../common/optional/kmscon.nix
     # ../common/optional/kodi.nix
+    ../common/optional/network.nix
     ../common/optional/openssh.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/systemd-boot.nix
+    ../common/optional/vpn.nix
     ../common/optional/xfce.nix
   ];
 
@@ -34,7 +36,6 @@
   networking.hostName = "geekom-a7";
 
   networking.networkmanager = {
-    enable = true;
     wifi.powersave = false;
   };
 
