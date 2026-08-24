@@ -2,34 +2,31 @@
   pkgs,
   osConfig,
   ...
-}: let
+}:
+
+let
   steamWithPkgs = pkgs.steam.override {
-    extraPkgs = pkgs:
-      with pkgs; [
-        xorg.libXcursor
-        xorg.libXi
-        xorg.libXinerama
-        xorg.libXScrnSaver
+    extraPkgs =
+      pkgs: with pkgs; [
+        corefonts
+        keyutils
+        libkrb5
         libpng
         libpulseaudio
         libvorbis
-        stdenv.cc.cc.lib
-        libkrb5
-        keyutils
+        libxcursor
+        libxi
+        libxinerama
+        libxscrnsaver
         mangohud
-        corefonts
+        stdenv.cc.cc.lib
       ];
   };
 
   steamDesktopEntry = {
-    name =
-      if osConfig.hardware.nvidia.prime.offload.enable
-      then "Steam (Nvidia-Offload)"
-      else "Steam";
+    name = if osConfig.hardware.nvidia.prime.offload.enable then "Steam (Nvidia-Offload)" else "Steam";
     exec =
-      if osConfig.hardware.nvidia.prime.offload.enable
-      then "nvidia-offload steam %U"
-      else "steam %U";
+      if osConfig.hardware.nvidia.prime.offload.enable then "nvidia-offload steam %U" else "steam %U";
     icon = "steam";
     categories = [
       "Network"
@@ -41,7 +38,8 @@
       "x-scheme-handler/steamlink"
     ];
   };
-in {
+in
+{
   home.packages = with pkgs; [
     steamWithPkgs
     mangohud
@@ -50,6 +48,12 @@ in {
   ];
 
   xdg.desktopEntries.steam = {
-    inherit (steamDesktopEntry) name exec icon categories mimeType;
+    inherit (steamDesktopEntry)
+      name
+      exec
+      icon
+      categories
+      mimeType
+      ;
   };
 }
