@@ -17,6 +17,9 @@
         "nix-command"
         "flakes"
       ];
+      extra-sandbox-paths = [
+        "/etc/skopeo/auth.json=/etc/nix/skopeo/auth.json"
+      ];
     };
 
     extraOptions = ''
