@@ -3,9 +3,8 @@
 {
   imports = [
     ./global
-    ./features/development/python.nix
     # ./features/accounts/posteo.nix
-    # ./features/development
+    ./features/development
     ./features/desktop/xfce
     ./features/games
     # ./features/productivity
