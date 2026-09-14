@@ -15,15 +15,15 @@
 
       extensions.packages = with pkgs.inputs.firefox-addons; [
         bitwarden
-        ghostery
         keepassxc-browser
         leechblock-ng
+        ublock-origin
       ];
 
       search = {
         force = true;
-        default = "Startpage";
-        privateDefault = "Startpage";
+        default = "duckduckgo";
+        privateDefault = "duckduckgo";
 
         engines = {
           "Startpage" = {
