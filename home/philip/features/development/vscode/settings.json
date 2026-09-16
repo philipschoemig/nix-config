@@ -82,7 +82,8 @@
   "redhat.telemetry.enabled": false,
   "security.workspace.trust.untrustedFiles": "newWindow",
   "sonarlint.pathToNodeExecutable": "node",
+  "update.mode": "none",
   "window.newWindowDimensions": "maximized",
-  "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Default Light Modern"
+  "workbench.colorTheme": "Light Modern",
+  "workbench.startupEditor": "none"
 }

@@ -16,7 +16,7 @@
   programs.vscodium = {
     enable = true;
 
-    profiles."default" = {
+    profiles.default = {
       enableUpdateCheck = false;
       enableExtensionUpdateCheck = true;
 
@@ -35,13 +35,16 @@
           jnoortheen.nix-ide
           llvm-vs-code-extensions.vscode-clangd
           mkhl.direnv
+          ms-azuretools.vscode-containers
           ms-python.python
           ms-vscode.cpptools-extension-pack
           ms-vsliveshare.vsliveshare
           njpwerner.autodocstring
           redhat.vscode-yaml
           rust-lang.rust-analyzer
+          sonarsource.sonarlint-vscode
           streetsidesoftware.code-spell-checker
+          streetsidesoftware.code-spell-checker-german
           tamasfe.even-better-toml
           timonwong.shellcheck
           vadimcn.vscode-lldb
@@ -50,34 +53,16 @@
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           # VS Code extensions that are not part of pkgs.vscode-extensions.
           {
-            name = "vscode-containers";
-            publisher = "ms-azuretools";
-            version = "2.3.0";
-            sha256 = "zrEZpd2geX2G4u6LkIk3d6C7vhwZZ4lwHGQR3Z0OWY4=";
-          }
-          {
-            name = "live-server";
-            publisher = "ms-vscode";
-            version = "0.5.2025091501";
-            sha256 = "P/VY3RWEv6S2Y0czxPnPWM94C7ursF957xe1L68VYWY=";
-          }
-          {
             name = "vscode-coverage-gutters";
             publisher = "ryanluker";
             version = "2.14.0";
             sha256 = "waF3FmncUsXqWFWGRy9X7RQ29BDRYlaqyFhEXg4HXNo=";
           }
           {
-            name = "sonarlint-vscode";
-            publisher = "SonarSource";
-            version = "4.35.1";
-            sha256 = "GOTt/fGyyHlTkU5jBs7r/Hf6vJ2ASeU0Y9XjaLdO6q0=";
-          }
-          {
-            name = "code-spell-checker-german";
-            publisher = "streetsidesoftware";
-            version = "2.3.4";
-            sha256 = "zc0cv4AOswvYcC4xJOq2JEPMQ5qTj9Dad5HhxtNETEs=";
+            name = "uv-toolkit";
+            publisher = "the0807";
+            version = "0.1.11";
+            sha256 = "LVsDnA6OH2q4sDLZMyLps9IYcap1WAdVAvtXd2Pjiyc=";
           }
         ];
 
