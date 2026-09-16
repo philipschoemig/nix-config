@@ -4,6 +4,7 @@
   imports = [
     ../java.nix # Required for SonarSource.sonarlint-vscode
     ../nodejs.nix # Required for SonarSource.sonarlint-vscode
+    ../opencode.nix # Required for sst-dev.opencode
   ];
 
   home.packages = with pkgs; [
@@ -63,6 +64,12 @@
             publisher = "the0807";
             version = "0.1.11";
             sha256 = "LVsDnA6OH2q4sDLZMyLps9IYcap1WAdVAvtXd2Pjiyc=";
+          }
+          {
+            name = "opencode";
+            publisher = "sst-dev";
+            version = "0.0.13";
+            sha256 = "6adXUaoh/OP5yYItH3GAQ7GpupfmTGaxkKP6hYUMYNQ=";
           }
         ];
 
