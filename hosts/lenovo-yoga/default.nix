@@ -19,7 +19,6 @@
     ../common/optional/network.nix
     ../common/optional/nvidia.nix
     ../common/optional/office.nix
-    ../common/optional/paperless.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
