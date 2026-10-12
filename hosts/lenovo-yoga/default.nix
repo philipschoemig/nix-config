@@ -19,11 +19,13 @@
     ../common/optional/network.nix
     ../common/optional/nvidia.nix
     ../common/optional/office.nix
+    ../common/optional/mozillavpn.nix
     ../common/optional/password-manager.nix
     ../common/optional/pipewire.nix
     ../common/optional/printing.nix
     ../common/optional/smartcard.nix
     ../common/optional/systemd-boot.nix
+    ../common/optional/vpn.nix
     ../common/optional/xfce.nix
   ];
 
