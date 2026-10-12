@@ -43,8 +43,12 @@
 
   virtualisation.virtualbox.host.enable = true;
 
-  # Nix Binary Cache from Factory
   nix.settings = {
+    extra-sandbox-paths = [
+      "/etc/skopeo/auth.json=/etc/nix/skopeo/auth.json"
+    ];
+
+    # Nix Binary Cache from Factory
     substituters = [ "http://cache.factory.secunet.com/factory-1" ];
     trusted-public-keys = [ "factory-1:Ai12PqfDkRmLzju4eE5/ucuDGXw4J31d3aTrz4TZKrk=" ];
   };
